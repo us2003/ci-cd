@@ -1,8 +1,11 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  init:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.13.1]
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -14,4 +17,18 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Staring Node.js ${{ matrix.node-version }}  
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version }} 
+      - name: Install modules      
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Usnit tests
+        run: npm run test
+      - name: Run eslint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run type:check  
       - run: echo "🍏 This job's status is ${{ job.status }}."

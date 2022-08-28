@@ -16,7 +16,9 @@
     "build": "react-scripts build",
     "test": "jest",
     "test2": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "node ./scripts/eslint.js",
+    "type:check": "node ./scripts/typecheck.js"
   },
   "eslintConfig": {
     "extends": [
