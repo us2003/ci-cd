@@ -7,6 +7,8 @@ function App() {
     <div className="App">
       <h1 style={{ color: "#0a0" }}>Value: {value}</h1>
       <button onClick={inc} style={{ background: "#555", color: "#eee", fontSize: 24 }}>Increment</button>
+      <hr />
+      <p>Deploying automatically to https://heroic-fudge-deafe0.netlify.app/ on each push to master branch.</p>
     </div>
   );
 }
