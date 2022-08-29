@@ -5,8 +5,8 @@ function App() {
   const inc = () => setValue( x => x + 1 );
   return (
     <div className="App">
-      <h1>Value: {value}</h1>
-      <button onClick={inc}>Increment</button>
+      <h1 style={{ color: "#0a0" }}>Value: {value}</h1>
+      <button onClick={inc} style={{ background: "#555", color: "#eee", fontSize: 24 }}>Increment</button>
     </div>
   );
 }
